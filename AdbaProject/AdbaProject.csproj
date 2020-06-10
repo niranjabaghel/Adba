@@ -1,0 +1,672 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F96265A7-C555-482D-B947-BDB1C1B7C387}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdbaProject</RootNamespace>
+    <AssemblyName>AdbaProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.1.0.2\lib\net452\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.7.0.100\lib\net452\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.10.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.10.0.100\lib\net452\ImageProcessor.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.4.0\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.WebApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.WebApi.2.0.0\lib\net46\LightInject.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.0.138\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.0.138\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="Our.Umbraco.DocTypeGridEditor, Version=1.2.7439.32789, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.DocTypeGridEditor.1.2.2\lib\net45\Our.Umbraco.DocTypeGridEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Our.Umbraco.SimpleTreeMenu, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.SimpleTreeMenu.0.2.2\lib\net472\Our.Umbraco.SimpleTreeMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.8.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Process, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Process.2.0.1\lib\net45\Serilog.Enrichers.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Thread.3.0.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Filters.Expressions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Filters.Expressions.2.0.0\lib\net45\Serilog.Filters.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact.Reader, Version=1.0.3.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.Reader.1.0.3\lib\net45\Serilog.Formatting.Compact.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.2.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Async, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Async.1.3.0\lib\net45\Serilog.Sinks.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Map, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Map.1.0.0\lib\netstandard2.0\Serilog.Sinks.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Superpower.2.0.0\lib\net45\Superpower.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO" />
+    <Reference Include="System.Linq.Expressions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.8.6.1\lib\net472\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\DocTypeGridEditor\Css\doctypegrideditor.css" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.controllers.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.directives.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.resources.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.services.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\da-DK.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-GB.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-US.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
+    <Content Include="App_Plugins\Iconator\dialogs\iconator.dialog.controller.js" />
+    <Content Include="App_Plugins\Iconator\dialogs\iconator.dialog.css" />
+    <Content Include="App_Plugins\Iconator\dialogs\iconator.dialog.html" />
+    <Content Include="App_Plugins\Iconator\iconator.controller.js" />
+    <Content Include="App_Plugins\Iconator\iconator.css" />
+    <Content Include="App_Plugins\Iconator\iconator.html" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Css\treemenu.css" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Js\dialog.controller.js" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Js\doctypepicker.controller.js" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Js\lib\treemenu.js" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Js\treemenueditor.controller.js" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Views\dialog.html" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Views\doctypepicker.html" />
+    <Content Include="App_Plugins\SimpleTreeMenu\Views\editor.html" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\color-style\style-1.css" />
+    <Content Include="assets\css\color-style\style-10.css" />
+    <Content Include="assets\css\color-style\style-11.css" />
+    <Content Include="assets\css\color-style\style-12.css" />
+    <Content Include="assets\css\color-style\style-13.css" />
+    <Content Include="assets\css\color-style\style-14.css" />
+    <Content Include="assets\css\color-style\style-15.css" />
+    <Content Include="assets\css\color-style\style-16.css" />
+    <Content Include="assets\css\color-style\style-17.css" />
+    <Content Include="assets\css\color-style\style-2.css" />
+    <Content Include="assets\css\color-style\style-3.css" />
+    <Content Include="assets\css\color-style\style-4.css" />
+    <Content Include="assets\css\color-style\style-5.css" />
+    <Content Include="assets\css\color-style\style-6.css" />
+    <Content Include="assets\css\color-style\style-7.css" />
+    <Content Include="assets\css\color-style\style-8.css" />
+    <Content Include="assets\css\color-style\style-9.css" />
+    <Content Include="assets\css\fonts.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\flaticon.css" />
+    <Content Include="assets\fonts\flaticon.html" />
+    <Content Include="assets\fonts\Flaticon.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\revicons90c6.svg" />
+    <Content Include="assets\images\1920X800\1.jpg" />
+    <Content Include="assets\images\1920X800\10.jpg" />
+    <Content Include="assets\images\1920X800\11.jpg" />
+    <Content Include="assets\images\1920X800\13.jpg" />
+    <Content Include="assets\images\1920X800\14.jpg" />
+    <Content Include="assets\images\1920X800\15.jpg" />
+    <Content Include="assets\images\1920X800\16.jpg" />
+    <Content Include="assets\images\1920X800\2.jpg" />
+    <Content Include="assets\images\1920X800\3.jpg" />
+    <Content Include="assets\images\1920X800\4.jpg" />
+    <Content Include="assets\images\1920X800\6.jpg" />
+    <Content Include="assets\images\1920X800\7.jpg" />
+    <Content Include="assets\images\1920X800\8.jpg" />
+    <Content Include="assets\images\1920X800\9.jpg" />
+    <Content Include="assets\images\1920X800\aboutus_banner.jpg" />
+    <Content Include="assets\images\480X370\1.jpg" />
+    <Content Include="assets\images\480X370\10.jpg" />
+    <Content Include="assets\images\480X370\11.jpg" />
+    <Content Include="assets\images\480X370\12.jpg" />
+    <Content Include="assets\images\480X370\13.jpg" />
+    <Content Include="assets\images\480X370\14.jpg" />
+    <Content Include="assets\images\480X370\15.jpg" />
+    <Content Include="assets\images\480X370\16.jpg" />
+    <Content Include="assets\images\480X370\17.jpg" />
+    <Content Include="assets\images\480X370\18.jpg" />
+    <Content Include="assets\images\480X370\19.jpg" />
+    <Content Include="assets\images\480X370\2.jpg" />
+    <Content Include="assets\images\480X370\20.jpg" />
+    <Content Include="assets\images\480X370\21.jpg" />
+    <Content Include="assets\images\480X370\22.jpg" />
+    <Content Include="assets\images\480X370\23.jpg" />
+    <Content Include="assets\images\480X370\24.jpg" />
+    <Content Include="assets\images\480X370\25.jpg" />
+    <Content Include="assets\images\480X370\26.jpg" />
+    <Content Include="assets\images\480X370\27.jpg" />
+    <Content Include="assets\images\480X370\28.jpg" />
+    <Content Include="assets\images\480X370\29.jpg" />
+    <Content Include="assets\images\480X370\3.jpg" />
+    <Content Include="assets\images\480X370\30.jpg" />
+    <Content Include="assets\images\480X370\31.jpg" />
+    <Content Include="assets\images\480X370\32.jpg" />
+    <Content Include="assets\images\480X370\33.jpg" />
+    <Content Include="assets\images\480X370\34.jpg" />
+    <Content Include="assets\images\480X370\35.jpg" />
+    <Content Include="assets\images\480X370\4.jpg" />
+    <Content Include="assets\images\480X370\5.jpg" />
+    <Content Include="assets\images\480X370\6.jpg" />
+    <Content Include="assets\images\480X370\7.jpg" />
+    <Content Include="assets\images\480X370\8.jpg" />
+    <Content Include="assets\images\480X370\9.jpg" />
+    <Content Include="assets\images\abda.png" />
+    <Content Include="assets\images\about-1-519x564.jpg" />
+    <Content Include="assets\images\AboutUs.jpg" />
+    <Content Include="assets\images\banner\About\aboutus_banner.jpg" />
+    <Content Include="assets\images\banner\ba.jpg" />
+    <Content Include="assets\images\banner\bann.jpg" />
+    <Content Include="assets\images\banner\banner-1.jpg" />
+    <Content Include="assets\images\banner\banner-2.jpg" />
+    <Content Include="assets\images\banner\banner-3.jpg" />
+    <Content Include="assets\images\banner\banner.jpg" />
+    <Content Include="assets\images\bg-breadcrumbs.jpg" />
+    <Content Include="assets\images\bg-counter-3.jpg" />
+    <Content Include="assets\images\bg-cta-2.jpg" />
+    <Content Include="assets\images\bg-cta-3.jpg" />
+    <Content Include="assets\images\bg-forms.jpg" />
+    <Content Include="assets\images\clients\1.png" />
+    <Content Include="assets\images\clients\2.jpg" />
+    <Content Include="assets\images\clients\3.jpg" />
+    <Content Include="assets\images\clients\4.jpg" />
+    <Content Include="assets\images\clients\5.jpg" />
+    <Content Include="assets\images\clients\6.jpg" />
+    <Content Include="assets\images\clients\7.jpg" />
+    <Content Include="assets\images\clients\8.jpg" />
+    <Content Include="assets\images\gallery\gallery-1.jpg" />
+    <Content Include="assets\images\gallery\gallery-10.jpg" />
+    <Content Include="assets\images\gallery\gallery-11.jpg" />
+    <Content Include="assets\images\gallery\gallery-12.jpg" />
+    <Content Include="assets\images\gallery\gallery-2.jpg" />
+    <Content Include="assets\images\gallery\gallery-3.jpg" />
+    <Content Include="assets\images\gallery\gallery-4.jpg" />
+    <Content Include="assets\images\gallery\gallery-5.jpg" />
+    <Content Include="assets\images\gallery\gallery-6.jpg" />
+    <Content Include="assets\images\gallery\gallery-7.jpg" />
+    <Content Include="assets\images\gallery\gallery-8.jpg" />
+    <Content Include="assets\images\gallery\gallery-9.jpg" />
+    <Content Include="assets\images\image-map-1-570x715.jpg" />
+    <Content Include="assets\images\logos\ABDA-LOGO.png" />
+    <Content Include="assets\images\logos\footer-default.png" />
+    <Content Include="assets\images\logos\footer-style-1.png" />
+    <Content Include="assets\images\logos\footer-style-10.png" />
+    <Content Include="assets\images\logos\footer-style-11.png" />
+    <Content Include="assets\images\logos\footer-style-12.png" />
+    <Content Include="assets\images\logos\footer-style-13.png" />
+    <Content Include="assets\images\logos\footer-style-14.png" />
+    <Content Include="assets\images\logos\footer-style-15.png" />
+    <Content Include="assets\images\logos\footer-style-2.png" />
+    <Content Include="assets\images\logos\footer-style-3.png" />
+    <Content Include="assets\images\logos\footer-style-4.png" />
+    <Content Include="assets\images\logos\footer-style-5.png" />
+    <Content Include="assets\images\logos\footer-style-6.png" />
+    <Content Include="assets\images\logos\footer-style-7.png" />
+    <Content Include="assets\images\logos\footer-style-8.png" />
+    <Content Include="assets\images\logos\footer-style-9.png" />
+    <Content Include="assets\images\logos\small-logo-default.png" />
+    <Content Include="assets\images\logos\small-logo-style-1.png" />
+    <Content Include="assets\images\logos\small-logo-style-10.png" />
+    <Content Include="assets\images\logos\small-logo-style-11.png" />
+    <Content Include="assets\images\logos\small-logo-style-12.png" />
+    <Content Include="assets\images\logos\small-logo-style-13.png" />
+    <Content Include="assets\images\logos\small-logo-style-14.png" />
+    <Content Include="assets\images\logos\small-logo-style-15.png" />
+    <Content Include="assets\images\logos\small-logo-style-2.png" />
+    <Content Include="assets\images\logos\small-logo-style-3.png" />
+    <Content Include="assets\images\logos\small-logo-style-4.png" />
+    <Content Include="assets\images\logos\small-logo-style-5.png" />
+    <Content Include="assets\images\logos\small-logo-style-6.png" />
+    <Content Include="assets\images\logos\small-logo-style-7.png" />
+    <Content Include="assets\images\logos\small-logo-style-8.png" />
+    <Content Include="assets\images\logos\small-logo-style-9.png" />
+    <Content Include="assets\images\offer\bar.jpg" />
+    <Content Include="assets\images\offer\guest room.jpg" />
+    <Content Include="assets\images\offer\kids-room.jpg" />
+    <Content Include="assets\images\offer\living room.jpg" />
+    <Content Include="assets\images\offer\master bedroom.jpg" />
+    <Content Include="assets\images\offer\moduler kitchen.jpg" />
+    <Content Include="assets\images\offer\offer-imag-1.jpg" />
+    <Content Include="assets\images\offer\offer-imag-2.jpg" />
+    <Content Include="assets\images\offer\offer-imag-3.jpg" />
+    <Content Include="assets\images\offer\offer-imag-4.jpg" />
+    <Content Include="assets\images\offer\offer-imag-5.jpg" />
+    <Content Include="assets\images\products\Bar\Bar-2.jpg" />
+    <Content Include="assets\images\products\Bar\bar.jpg" />
+    <Content Include="assets\images\products\Bed Room\Bed-Room.jpg" />
+    <Content Include="assets\images\products\Bed Room\Master-Bedroom.jpg" />
+    <Content Include="assets\images\products\Kids Room\Kids-Room.jpg" />
+    <Content Include="assets\images\products\Kitchen\Moduler-Kitchen.jpg" />
+    <Content Include="assets\images\products\Living and Dinning\Dinning-Room.jpg" />
+    <Content Include="assets\images\products\Living and Dinning\Living-Room.jpg" />
+    <Content Include="assets\images\products\post-5-470x430.jpg" />
+    <Content Include="assets\images\products\post-6-270x204.jpg" />
+    <Content Include="assets\images\products\post-7-270x204.jpg" />
+    <Content Include="assets\images\products\products-img-1.jpg" />
+    <Content Include="assets\images\products\products-img-10.jpg" />
+    <Content Include="assets\images\products\products-img-11.jpg" />
+    <Content Include="assets\images\products\products-img-12.jpg" />
+    <Content Include="assets\images\products\products-img-13.jpg" />
+    <Content Include="assets\images\products\products-img-14.jpg" />
+    <Content Include="assets\images\products\products-img-15.jpg" />
+    <Content Include="assets\images\products\products-img-16.jpg" />
+    <Content Include="assets\images\products\products-img-17.jpg" />
+    <Content Include="assets\images\products\products-img-18.jpg" />
+    <Content Include="assets\images\products\products-img-19.jpg" />
+    <Content Include="assets\images\products\products-img-2.jpg" />
+    <Content Include="assets\images\products\products-img-20.jpg" />
+    <Content Include="assets\images\products\products-img-3.jpg" />
+    <Content Include="assets\images\products\products-img-4.jpg" />
+    <Content Include="assets\images\products\products-img-5.jpg" />
+    <Content Include="assets\images\products\products-img-6.jpg" />
+    <Content Include="assets\images\products\products-img-7.jpg" />
+    <Content Include="assets\images\products\products-img-8.jpg" />
+    <Content Include="assets\images\products\products-img-9.jpg" />
+    <Content Include="assets\images\products\products-mini-1.jpg" />
+    <Content Include="assets\images\products\products-mini-2.jpg" />
+    <Content Include="assets\images\resource\1.jpg" />
+    <Content Include="assets\images\resource\2.jpg" />
+    <Content Include="assets\images\resource\3.jpg" />
+    <Content Include="assets\images\resource\4.jpg" />
+    <Content Include="assets\images\resource\team-1.jpg" />
+    <Content Include="assets\images\resource\team-2.jpg" />
+    <Content Include="assets\images\resource\team-3.jpg" />
+    <Content Include="assets\images\resource\team-4.jpg" />
+    <Content Include="assets\images\Services\bar.jpg" />
+    <Content Include="assets\images\Services\guest room.jpg" />
+    <Content Include="assets\images\Services\kids-room.jpg" />
+    <Content Include="assets\images\Services\living room.jpg" />
+    <Content Include="assets\images\Services\master bedroom.jpg" />
+    <Content Include="assets\images\Services\moduler kitchen.jpg" />
+    <Content Include="assets\images\Team\charanpreet.png" />
+    <Content Include="assets\images\Team\sanjay.png" />
+    <Content Include="assets\images\Team\shivraj.png" />
+    <Content Include="assets\images\text-image.jpg" />
+    <Content Include="assets\images\video\cconstruction-bg.mp4" />
+    <Content Include="assets\js\core.min.js" />
+    <Content Include="assets\js\particles.js" />
+    <Content Include="assets\js\particles.min.js" />
+    <Content Include="assets\js\particlesnw.js" />
+    <Content Include="assets\js\particlesnw.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\typewriter.js" />
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\Models\BannerSlider.generated.cs" />
+    <Compile Include="App_Data\Models\File.generated.cs" />
+    <Compile Include="App_Data\Models\Folder.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\IconContent.generated.cs" />
+    <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\MenuNode.generated.cs" />
+    <Compile Include="App_Data\Models\Site.generated.cs" />
+    <Compile Include="App_Data\Models\SocialLinks.generated.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="Media\Web.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\serilog.user.config" />
+    <Content Include="config\serilog.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="App_Plugins\Iconator\package.manifest" />
+    <Content Include="App_Plugins\Iconator\LICENSE" />
+    <Content Include="App_Plugins\SimpleTreeMenu\package.manifest" />
+    <Content Include="assets\fonts\fl-bigmug-line.woff" />
+    <Content Include="assets\fonts\Flaticon.eot" />
+    <Content Include="assets\fonts\Flaticon.ttf" />
+    <Content Include="assets\fonts\Flaticon.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\Georgia Regular font.ttf" />
+    <Content Include="assets\fonts\Georgia.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\HaloHandletter.otf" />
+    <Content Include="assets\fonts\lg.woff" />
+    <Content Include="assets\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="assets\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="assets\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="assets\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="assets\fonts\revicons90c6.eot" />
+    <Content Include="assets\fonts\revicons90c6.ttf" />
+    <Content Include="assets\fonts\revicons90c6.woff" />
+    <Content Include="assets\fonts\_flaticon.scss" />
+    <Content Include="assets\images\480X370\13.iff" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
+    <Content Include="App_Data\Models\all.dll.path" />
+    <Content Include="App_Data\Models\models.hash" />
+    <Content Include="App_Data\Models\ood.flag" />
+    <None Include="packages.config" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\AdbaLayout.cshtml" />
+    <Content Include="Views\Partials\Header.cshtml" />
+    <Content Include="Views\Partials\HeaderMenu.cshtml" />
+    <Content Include="Views\home.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\commonPage.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50221</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44392/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
+  <Import Project="..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
